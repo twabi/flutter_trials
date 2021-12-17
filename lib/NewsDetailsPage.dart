@@ -14,9 +14,13 @@ class _NewsDetailsPage extends State<NewsDetailsPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("widget.title"),
+        title: Text("News Details"),
       ),
       body: SingleChildScrollView(
+        padding: const EdgeInsets.symmetric(
+          horizontal: 10,
+          vertical: 20,
+        ),
         child: Column(
           children:  <Widget>[
 
@@ -32,10 +36,15 @@ class _NewsDetailsPage extends State<NewsDetailsPage> {
                   fit:BoxFit.fill
               )
           ),
-            const Align(
+            const Padding(
+              padding: EdgeInsets.symmetric(
+                vertical: 15,
+              ),
+              child: Align(
               alignment: Alignment.topLeft,
               child: Text("News Header", style: TextStyle(fontSize: 23, fontWeight: FontWeight.bold),),
-            ),
+            ),)
+            ,
             const Align(
               alignment: Alignment.topLeft,
               child: Text(
@@ -45,10 +54,27 @@ class _NewsDetailsPage extends State<NewsDetailsPage> {
                   "The Board must also consider the wider risks to the opposition and other people the club may come into contact with."
                 , style: TextStyle(fontSize: 16,)),
             ),
-            const Align(
-              alignment: Alignment.topLeft,
-              child: Text("By Twabi", style: TextStyle(fontStyle: FontStyle.italic, fontSize: 12),),
+            Row(
+              children: const [
+                Padding(
+                padding: EdgeInsets.fromLTRB(0.0, 10.0, 10.0, 10.0),
+                  child: Align(
+                    alignment: Alignment.topLeft,
+                    child: Text("By Ahmed Twabi", style: TextStyle(fontStyle: FontStyle.italic, fontSize: 16),),
+                  ),
+                ),
+
+                Padding(
+                  padding: EdgeInsets.fromLTRB(10.0, 10.0, 10.0, 10.0),
+                  child: Align(
+                    alignment: Alignment.topRight,
+                    child: Text("19:30", style: TextStyle(color: Colors.green,fontSize: 16, fontStyle: FontStyle.italic)
+                    )
+                  )
+                ),
+              ],
             )
+
           ],
         ),
       ),
