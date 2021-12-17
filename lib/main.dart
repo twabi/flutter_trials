@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:malawi_football/FixturePage.dart';
+import 'package:malawi_football/NewsPage.dart';
 
 import 'PlaceholderWidget.dart';
 
@@ -52,8 +54,8 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   int _currentIndex = 0;
   final List _children = [
-    PlaceholderWidget(Colors.white),
-    PlaceholderWidget(Colors.deepOrange),
+    NewsPage(),
+    FixturePage(),
     PlaceholderWidget(Colors.green)
   ];
 
@@ -84,15 +86,15 @@ class _MyHomePageState extends State<MyHomePage> {
           items: const [
             BottomNavigationBarItem(
               icon: Icon(Icons.home),
-              label: "Home",
+              label: "News",
             ),
             BottomNavigationBarItem(
               icon: Icon(Icons.mail),
-              label: "Messages",
+              label: "Fixtures",
             ),
             BottomNavigationBarItem(
                 icon: Icon(Icons.person),
-                label: "Profiles",
+                label: "Stats",
             )
           ],
         ),//ng comma makes auto-formatting nicer for build methods.
